@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Flagship Tours Sri Lanka</title>
+    <meta name="description" content="Learn about Flagship Tours - Sri Lanka's premier travel agency with over 15 years of experience creating unforgettable journeys.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://static.photos/travel/1200x630/10');
+            background-size: cover;
+            background-position: center;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-blue-800 heading-font flex items-center">
+                        <i data-feather="navigation" class="mr-2 text-orange-500"></i> Flagship Tours
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-orange-500 transition">Home</a>
+                    <a href="/about/" class="text-gray-600 hover:text-orange-500 transition">About Us</a>
+                    <a href="/tours/" class="text-blue-800 font-medium hover:text-orange-500 transition">Tours</a>
+                    <a href="/gallery/" class="text-gray-600 hover:text-orange-500 transition">Gallery</a>
+                    <a href="/contact/" class="text-gray-600 hover:text-orange-500 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <i data-feather="menu" class="text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="mobile-menu hidden md:hidden py-4">
+                <a href="/" class="block py-2 text-gray-600">Home</a>
+                <a href="/about/" class="block py-2 text-gray-600">About Us</a>
+                <a href="/tours/" class="block py-2 text-blue-800 font-medium">Tours</a>
+                <a href="/gallery/" class="block py-2 text-gray-600">Gallery</a>
+                <a href="/contact/" class="block py-2 text-gray-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="about-hero h-96 flex items-center">
+        <div class="container mx-auto px-6 text-center text-white" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 heading-font">Our Story</h1>
+            <p class="text-xl max-w-2xl mx-auto">Discover the passion behind Sri Lanka's most trusted travel experts</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <img src="http://static.photos/office/640x360/1" alt="Our Office" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6 heading-font">Who We Are</h2>
+                    <p class="text-gray-600 mb-4">Founded in 2005, Flagship Tours has grown from a small family-run business to Sri Lanka's premier travel agency. Our journey began with a simple passion: to share the beauty of our homeland with the world.</p>
+                    <p class="text-gray-600 mb-6">Today, we're proud to have hosted over 15,000 travelers from 42 countries, each receiving our signature blend of warm Sri Lankan hospitality and professional service.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="text-xl font-bold text-blue-800 mb-2 heading-font">15+</h3>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="text-xl font-bold text-blue-800 mb-2 heading-font">98%</h3>
+                            <p class="text-gray-600">Customer Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4 heading-font">Our Mission & Values</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="compass" class="text-blue-800 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-blue-800">Authentic Experiences</h3>
+                    <p class="text-gray-600 text-center">We go beyond tourist spots to connect you with Sri Lanka's true essence through local interactions and hidden gems.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="users" class="text-green-800 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-blue-800">Community Impact</h3>
+                    <p class="text-gray-600 text-center">We partner with local communities to ensure tourism benefits everyone, from small vendors to artisan cooperatives.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-orange-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="shield" class="text-orange-800 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-blue-800">Sustainable Travel</h3>
+                    <p class="text-gray-600 text-center">We're committed to eco-friendly practices that preserve Sri Lanka's natural beauty for future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Timeline -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4 heading-font">Our Journey</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Timeline item 1 -->
+                <div class="flex flex-col md:flex-row mb-16" data-aos="fade-up">
+                    <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                        <div class="bg-blue-800 text-white p-6 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2 heading-font">2005: Humble Beginnings</h3>
+                            <p>Founded by travel enthusiast Ravi Perera with just two employees and a passion for showcasing Sri Lanka's beauty.</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 relative">
+                        <div class="hidden md:block absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-orange-500 rounded-full border-4 border-white"></div>
+                        <div class="bg-gray-100 p-6 rounded-lg h-full flex items-center">
+                            <img src="http://static.photos/office/320x240/1" alt="First Office" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                </div>
+                <!-- Timeline item 2 -->
+                <div class="flex flex-col md:flex-row mb-16" data-aos="fade-up">
+                    <div class="md:w-1/2 md:pr-12 order-2 md:order-1">
+                        <div class="bg-gray-100 p-6 rounded-lg h-full flex items-center">
+                            <img src="http://static.photos/travel/320x240/2" alt="First Group Tour" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0 order-1 md:order-2 relative">
+                        <div class="hidden md:block absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-orange-500 rounded-full border-4 border-white"></div>
+                        <div class="bg-blue-800 text-white p-6 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2 heading-font">2010: First Milestone</h3>
+                            <p>Hosted our 1000th guest and expanded operations with a new office in Colombo and a team of 10 travel experts.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Timeline item 3 -->
+                <div class="flex flex-col md:flex-row mb-16" data-aos="fade-up">
+                    <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                        <div class="bg-blue-800 text-white p-6 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2 heading-font">2015: Awards & Recognition</h3>
+                            <p>Received "Best Travel Agency in Sri Lanka" award from the Sri Lanka Tourism Development Authority.</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 relative">
+                        <div class="hidden md:block absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-orange-500 rounded-full border-4 border-white"></div>
+                        <div class="bg-gray-100 p-6 rounded-lg h-full flex items-center">
+                            <img src="http://static.photos/award/320x240/1" alt="Award Ceremony" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                </div>
+                <!-- Timeline item 4 -->
+                <div class="flex flex-col md:flex-row" data-aos="fade-up">
+                    <div class="md:w-1/2 md:pr-12 order-2 md:order-1">
+                        <div class="bg-gray-100 p-6 rounded-lg h-full flex items-center">
+                            <img src="http://static.photos/team/320x240/1" alt="Current Team" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0 order-1 md:order-2 relative">
+                        <div class="hidden md:block absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-orange-500 rounded-full border-4 border-white"></div>
+                        <div class="bg-blue-800 text-white p-6 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-2 heading-font">Present Day</h3>
+                            <p>A team of 35 travel professionals creating unforgettable experiences for travelers from around the world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4 heading-font">Meet Our Team</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our passionate team of travel experts is ready to make your Sri Lankan adventure unforgettable</p>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md team-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/people/640x360/4" alt="Ravi Perera" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-1">Ravi Perera</h3>
+                        <p class="text-orange-500 font-medium mb-4">Founder & CEO</p>
+                        <p class="text-gray-600 mb-4">With over 25 years in the travel industry, Ravi's passion for Sri Lanka is infectious. He personally oversees all tour designs.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue-800 hover:text-orange-500"><i data-feather="linkedin"></i></a>
+                            <a href="#" class="text-blue-800 hover:text-orange-500"><i data-feather="twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md team-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/people/640x360/5" alt="Anoma Silva" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-1">Anoma Silva</h3>
+                        <p class="text-orange-500 font-medium mb-4">Operations Manager</p>
+                        <p class="text-gray-600 mb-4">Anoma ensures every detail of your trip is perfect. Her organizational skills are legendary among our clients.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue-800 hover:text-orange-500"><i data-feather="linkedin"></i></a>
+                            <a href="#" class="text-blue-800 hover:text-orange-500"><i data-feather="instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md team-card transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/people/640x360/6" alt="Dinesh Fernando" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-1">Dinesh Fernando</h3>
+                        <p class="text-orange-500 font-medium mb-4">Head Guide</p>
+                        <p class="text-gray-600 mb-4">Dinesh's encyclopedic knowledge of Sri Lanka's history and culture makes him our most requested guide.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue-800 hover:text-orange-500"><i data-feather="facebook"></i></a>
+                            <a href="#" class="text-blue-800 hover:text-orange-500"><i data-feather="youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-orange-500 text-white">
+        <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 heading-font">Ready to Start Your Journey?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Our team is ready to create your perfect Sri Lankan adventure</p>
+            <a href="contact.html" class="inline-block bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 heading-font">Flagship Tours</h3>
+                    <p class="mb-4">Your trusted partner for unforgettable Sri Lankan experiences since 2005.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-orange-500 transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="hover:text-orange-500 transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="hover:text-orange-500 transition"><i data-feather="twitter"></i></a>
+                        <a href="#" class="hover:text-orange-500 transition"><i data-feather="youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4 heading-font">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-orange-500 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-orange-500 transition">About Us</a></li>
+                        <li><a href="tours.html" class="hover:text-orange-500 transition">Tour Packages</a></li>
+                        <li><a href="gallery.html" class="hover:text-orange-500 transition">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4 heading-font">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-3 mt-1 w-4 h-4"></i>
+                            <span>123 Galle Road, Colombo 03, Sri Lanka</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="mr-3 w-4 h-4"></i>
+                            <span>+94 11 234 5678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-3 w-4 h-4"></i>
+                            <span>info@flagshiptours.lk</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4 heading-font">Newsletter</h3>
+                    <p class="mb-4">Subscribe for travel tips and special offers</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-orange-500 hover:bg-orange-600 px-4 rounded-r">
+                            <i data-feather="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 pt-8 text-center text-sm text-blue-300">
+                <p>&copy; 2023 Flagship Tours. All rights reserved. | Designed with <i data-feather="heart" class="inline w-4 h-4 text-orange-500"></i> in Sri Lanka</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/94771234567" class="whatsapp-button bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition">
+        <i data-feather="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
