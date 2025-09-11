@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages | Flagship Tours Sri Lanka</title>
+    <meta name="description" content="Explore our curated Sri Lanka tour packages - cultural, adventure, beach, wildlife and luxury vacations tailored to your interests.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .tours-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://static.photos/travel/1200x630/11');
+            background-size: cover;
+            background-position: center;
+        }
+        .tour-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .filter-btn.active {
+            background-color: #1e40af;
+            color: white;
+        }
+        .price-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #1e40af;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-blue-800 heading-font flex items-center">
+                        <i data-feather="navigation" class="mr-2 text-orange-500"></i> Flagship Tours
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-orange-500 transition">Home</a>
+                    <a href="/about/" class="text-gray-600 hover:text-orange-500 transition">About Us</a>
+                    <a href="/tours/" class="text-blue-800 font-medium hover:text-orange-500 transition">Tours</a>
+                    <a href="/gallery/" class="text-gray-600 hover:text-orange-500 transition">Gallery</a>
+                    <a href="/contact/" class="text-gray-600 hover:text-orange-500 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <i data-feather="menu" class="text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="mobile-menu hidden md:hidden py-4">
+                <a href="/" class="block py-2 text-gray-600">Home</a>
+                <a href="/about/" class="block py-2 text-gray-600">About Us</a>
+                <a href="/tours/" class="block py-2 text-blue-800 font-medium">Tours</a>
+                <a href="/gallery/" class="block py-2 text-gray-600">Gallery</a>
+                <a href="/contact/" class="block py-2 text-gray-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tours-hero h-96 flex items-center">
+        <div class="container mx-auto px-6 text-center text-white" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 heading-font">Discover Sri Lanka</h1>
+            <p class="text-xl max-w-2xl mx-auto">Choose from our handcrafted tour packages or let us design a custom itinerary just for you</p>
+        </div>
+    </section>
+
+    <!-- Tours Filter -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                <h2 class="text-2xl font-bold text-blue-800 mb-6 heading-font">Find Your Perfect Tour</h2>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Search -->
+                    <div>
+                        <label class="block text-gray-700 mb-2">Search</label>
+                        <div class="relative">
+                            <input type="text" placeholder="Destination or keyword" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <i data-feather="search" class="absolute right-3 top-3 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <!-- Tour Type -->
+                    <div>
+                        <label class="block text-gray-700 mb-2">Tour Type</label>
+                        <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">All Types</option>
+                            <option value="cultural">Cultural</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="beach">Beach</option>
+                            <option value="wildlife">Wildlife</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="honeymoon">Honeymoon</option>
+                        </select>
+                    </div>
+                    <!-- Duration -->
+                    <div>
+                        <label class="block text-gray-700 mb-2">Duration</label>
+                        <select class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Any Duration</option>
+                            <option value="1-3">1-3 Days</option>
+                            <option value="4-7">4-7 Days</option>
+                            <option value="8-14">8-14 Days</option>
+                            <option value="15+">15+ Days</option>
+                        </select>
+                    </div>
+                    <!-- Price Range -->
+                    <div>
+                        <label class="block text-gray-700 mb-2">Price Range</label>
+                        <input type="range" min="0" max="5000" value="2500" class="w-full price-range">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>$0</span>
+                            <span>$2500</span>
+                            <span>$5000+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <button class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        Filter Tours
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tours Grid -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold text-blue-800 heading-font">Our Tour Packages</h2>
+                <div class="flex space-x-2">
+                    <button class="filter-btn active px-4 py-2 rounded-lg bg-blue-800 text-white">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300">Cultural</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300">Adventure</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300">Beach</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300">Wildlife</button>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tour 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md tour-card transition duration-300" data-aos="fade-up">
+                    <div class="relative">
+                        <img src="http://static.photos/travel/640x360/12" alt="Classic Sri Lanka" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">Bestseller</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-blue-800">Classic Sri Lanka</h3>
+                            <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">12 Days</span>
+                        </div>
+                        <div class="flex items-center text-yellow-500 mb-3">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <span class="text-gray-600 ml-2">(24 reviews)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Experience the best of Sri Lanka in this comprehensive tour covering cultural highlights, wildlife safaris, and beach relaxation.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Sigiriya</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Kandy</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Yala</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Galle</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-500 font-bold text-xl">$1,299</span>
+                            <a href="#" class="text-blue-800 hover:text-orange-500 font-medium flex items-center">
+                                View Details <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tour 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md tour-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="http://static.photos/adventure/640x360/13" alt="Adventure Explorer" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">New</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-blue-800">Adventure Explorer</h3>
+                            <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">8 Days</span>
+                        </div>
+                        <div class="flex items-center text-yellow-500 mb-3">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <span class="text-gray-600 ml-2">(18 reviews)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">For thrill-seekers! White water rafting, hiking, surfing and wildlife safaris packed into one adrenaline-filled itinerary.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Kitulgala</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Ella</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Arugam Bay</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Horton Plains</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-500 font-bold text-xl">$899</span>
+                            <a href="#" class="text-blue-800 hover:text-orange-500 font-medium flex items-center">
+                                View Details <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tour 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md tour-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/beach/640x360/14" alt="Luxury Beach Escape" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-blue-800">Luxury Beach Escape</h3>
+                            <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">7 Days</span>
+                        </div>
+                        <div class="flex items-center text-yellow-500 mb-3">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <span class="text-gray-600 ml-2">(32 reviews)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Unwind in style at Sri Lanka's most luxurious beach resorts with private transfers, spa treatments and gourmet dining included.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Tangalle</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Bentota</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Trincomalee</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-500 font-bold text-xl">$1,799</span>
+                            <a href="#" class="text-blue-800 hover:text-orange-500 font-medium flex items-center">
+                                View Details <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tour 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md tour-card transition duration-300" data-aos="fade-up">
+                    <img src="http://static.photos/culture/640x360/15" alt="Cultural Triangle" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-blue-800">Cultural Triangle</h3>
+                            <span class="bg-orange-100 text-orange-800 text-sm font-medium px-3 py-1 rounded-full">5 Days</span>
+                        </div>
+                        <div class="flex items-center text-yellow-500 mb-3">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <span class="text-gray-600 ml-2">(27 reviews)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Immerse yourself in Sri Lanka's rich heritage with visits to ancient cities, temples and UNESCO World Heritage sites.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Anuradhapura</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Polonnaruwa</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Sigiriya</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Dambulla</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-500 font-bold text-xl">$649</span>
+                            <a href="#" class="text-blue-800 hover:text-orange-500 font-medium flex items-center">
+                                View Details <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tour 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md tour-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="http://static.photos/wildlife/640x360/16" alt="Wildlife Safari" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">Popular</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-blue-800">Wildlife Safari</h3>
+                            <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">6 Days</span>
+                        </div>
+                        <div class="flex items-center text-yellow-500 mb-3">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <span class="text-gray-600 ml-2">(21 reviews)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Spot leopards, elephants and more in Sri Lanka's best national parks with expert guides and comfortable safari lodges.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Yala</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Wilpattu</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Udawalawe</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Minneriya</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-500 font-bold text-xl">$799</span>
+                            <a href="#" class="text-blue-800 hover:text-orange-500 font-medium flex items-center">
+                                View Details <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tour 6 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md tour-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/honeymoon/640x360/
+</body>
+</html>
