@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kandy Day Tour – Flagship Tours</title>
+    
+    <!-- Preconnect to YouTube and image domains -->
+    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header styles */
+        header {
+            position: sticky;
+            top: 0;
+            background: #11558b;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .icon-btn {
+            background: #00bf63;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .icon-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .icon-btn.call {
+            background: #11558b;
+        }
+        
+        .lang-toggle {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: #11558b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* Info banner */
+        .info-banner {
+            background: #11558b;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* Main content */
+        main {
+            padding: 30px 0;
+        }
+        
+        .locations-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .locations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .locations-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Location card */
+        .location-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            color: #11558b;
+            margin-bottom: 10px;
+        }
+        
+        .card-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .video-toggle {
+            background: #00bf63;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+        
+        .video-toggle:hover {
+            background: #00a85a;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .video-container.visible {
+            display: block;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Icon styles */
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .header-buttons {
+                gap: 10px;
+            }
+            
+            .icon-btn {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .lang-toggle {
+                top: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Flagship Tours</div>
+        <div class="header-buttons">
+            <a href="tel:+9475824216" class="icon-btn call" aria-label="Call us">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+            </a>
+            <a href="https://wa.me/9475824216?text=Interested%20in%20Kandy%20Day%20Tour" class="icon-btn" aria-label="Message us on WhatsApp">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.885-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+    
+    <button class="lang-toggle" id="langToggle">🇬🇧/🇱🇰</button>
+    
+    <div class="info-banner">
+        <span class="text-en">1600 LKR per seat + lunch (Entrance tickets to locations are to be purchased separately)</span>
+        <span class="text-si" style="display: none;">ස්ථානවලට ඇතුළු වීමේ ටිකට් වෙනම මිලදී ගැනීමට අවශ්‍යයි (හිටපන භාගයක් + භෝජනය සඳහා පාර්ශවයක් රු. 1600)</span>
+    </div>
+    
+    <div class="container">
+        <main>
+            <div class="locations-grid">
+                <!-- Ranawana Viharaya -->
+                <article class="location-card">
+                    <img src="/dec-kandy/rw.png" alt="Ranawana Viharaya" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h2 class="card-title">
+                            <span class="text-en">Ranawana Viharaya</span>
+                            <span class="text-si" style="display: none;">රණවන විහාරය</span>
+                        </h2>
+                        <p class="card-description">
+                            <span class="text-en">Historic Buddhist temple with beautiful architecture</span>
+                            <span class="text-si" style="display: none;">හිතවත් ගොඩනැගිල්ලෙන් යුත් ඉතිහාස සම්පන්න බෞද්ධ විහාරයකි</span>
+                        </p>
+                        <button class="video-toggle">
+                            <svg class="icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <span class="text-en">View Video</span>
+                            <span class="text-si" style="display: none;">වීඩියෝව බලන්න</span>
+                        </button>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/olLMcGNydQo" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Nelligala -->
+                <article class="location-card">
+                    <img src="/dec-kandy/ni.png" alt="Nelligala" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h2 class="card-title">
+                            <span class="text-en">Nelligala</span>
+                            <span class="text-si" style="display: none;">නැල්ලිගල</span>
+                        </h2>
+                        <p class="card-description">
+                            <span class="text-en">Ancient shrine dedicated to the god Kataragama</span>
+                            <span class="text-si" style="display: none;">කතරගම දෙවියන් වන්දනා කරන පුරාතන ශ්‍රද්ධාස්ථානයකි</span>
+                        </p>
+                        <button class="video-toggle">
+                            <svg class="icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <span class="text-en">View Video</span>
+                            <span class="text-si" style="display: none;">වීඩියෝව බලන්න</span>
+                        </button>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/99zw4p37WqA?start=50" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Ahalepola Wax Museum -->
+                <article class="location-card">
+                    <img src="/dec-kandy/awm.png" alt="Ahalepola Wax Museum" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h2 class="card-title">
+                            <span class="text-en">Ahalepola Wax Museum</span>
+                            <span class="text-si" style="display: none;">අහල්පොල සීනු ගොහොරු ගෘහය</span>
+                        </h2>
+                        <p class="card-description">
+                            <span class="text-en">Unique collection of wax sculptures depicting Sri Lankan history</span>
+                            <span class="text-si" style="display: none;">ශ්‍රී ලංකා ඉතිහාසය ප්‍රකාශ කරන සීනු මූර්ති අනන්‍ය එකතුවකි</span>
+                        </p>
+                        <button class="video-toggle">
+                            <svg class="icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <span class="text-en">View Video</span>
+                            <span class="text-si" style="display: none;">වීඩියෝව බලන්න</span>
+                        </button>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Q9vEbLJPY9U" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Sandagiri Seya -->
+                <article class="location-card">
+                    <img src="/dec-kandy/ss.png" alt="Sandagiri Seya" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h2 class="card-title">
+                            <span class="text-en">Sandagiri Seya</span>
+                            <span class="text-si" style="display: none;">සඳගිරි සෑය</span>
+                        </h2>
+                        <p class="card-description">
+                            <span class="text-en">Historical Buddhist temple with beautiful frescoes</span>
+                            <span class="text-si" style="display: none;">හිතවත් රූප සම්පන්න ඉතිහාස සම්පන්න බෞද්ධ විහාරයකි</span>
+                        </p>
+                        <button class="video-toggle">
+                            <svg class="icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <span class="text-en">View Video</span>
+                            <span class="text-si" style="display: none;">වීඩියෝව බලන්න</span>
+                        </button>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/wmrYIelftM0" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Temple of the Tooth Relic -->
+                <article class="location-card">
+                    <img src="/dec-kandy/ttr.png" alt="Temple of the Tooth Relic" class="card-image" loading="lazy">
+                    <div class="card-content">
+                        <h2 class="card-title">
+                            <span class="text-en">Temple of the Tooth Relic</span>
+                            <span class="text-si" style="display: none;">දළදා ස්වාමින් වහන්සේ දෙවි අලුව</span>
+                        </h2>
+                        <p class="card-description">
+                            <span class="text-en">Sacred Buddhist temple housing the relic of Buddha's tooth</span>
+                            <span class="text-si" style="display: none;">බුදුරජාණන්ගේ දන්තයේ ඉතිරිකිරු රක්ෂා කරන ශ්‍රද්ධාස්ථානයකි</span>
+                        </p>
+                        <button class="video-toggle">
+                            <svg class="icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <span class="text-en">View Video</span>
+                            <span class="text-si" style="display: none;">වීඩියෝව බලන්න</span>
+                        </button>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/WRo-_cDedq0" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© Flagship Tours. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Language toggle functionality
+        document.getElementById('langToggle').addEventListener('click', function() {
+            const currentLang = document.querySelector('.text-en').style.display !== 'none' ? 'en' : 'si';
+            const newLang = currentLang === 'en' ? 'si' : 'en';
+            
+            document.querySelectorAll('.text-en, .text-si').forEach(element => {
+                if (element.classList.contains('text-' + newLang)) {
+                    element.style.display = 'inline';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+            
+            // Update WhatsApp link based on language
+            const whatsappLink = document.querySelector('.header-buttons a[href^="https://wa.me"]');
+            if (newLang === 'si') {
+                whatsappLink.href = 'https://wa.me/9475824216?text=කාන්ඩි%20දින%20යාත්‍රාව%20යට%20මම%20කැමතියි';
+            } else {
+                whatsappLink.href = 'https://wa.me/9475824216?text=Interested%20in%20Kandy%20Day%20Tour';
+            }
+        });
+        
+        // Video toggle functionality
+        document.querySelectorAll('.video-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const videoContainer = this.nextElementSibling;
+                const isVisible = videoContainer.classList.contains('visible');
+                
+                // Update button text based on visibility
+                const buttonText = this.querySelector('span');
+                if (isVisible) {
+                    buttonText.textContent = document.querySelector('.text-en').style.display !== 'none' 
+                        ? 'View Video' 
+                        : 'වීඩියෝව බලන්න';
+                } else {
+                    buttonText.textContent = document.querySelector('.text-en').style.display !== 'none' 
+                        ? 'Hide Video' 
+                        : 'වීඩියෝව හෙළන්න';
+                }
+                
+                videoContainer.classList.toggle('visible');
+            });
+        });
+    </script>
+</body>
+</html>
